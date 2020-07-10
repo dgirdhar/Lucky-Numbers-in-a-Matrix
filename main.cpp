@@ -4,16 +4,12 @@ public:
         vector<int> lucky;
         
         for (int i = 0; i < matrix.size(); ++i) {
-            vector<int> &row = matrix[i];
-            int min = 0;
-            int index = -1;
+            vector<int> &row = matrix[i];            
+            int min = row[0];
+            int index = 0;
+            int rowSize = row.size();
             
-            if (row.size() > 0) {
-                min = row[0];
-                index = 0;
-            }
-            
-            for (int j = 1; j < row.size(); ++j) {
+            for (int j = 1; j < rowSize; ++j) {
                 if (row[j] < min) {
                     min = row[j];
                     index = j;
